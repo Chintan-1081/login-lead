@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Form_NavBar from './Form_NavBar';
 
 const Create_Form = () => {
-
+    const url ="http://localhost:3000"
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -26,7 +26,7 @@ const Create_Form = () => {
     useEffect(() => {
         const FormDataPost = async () => {
             // console.log("...............")
-            await fetch("http://localhost:3000/form", {
+            await fetch(`${url}/form`, {
                 method: "POST",
                 mode: "cors",
                 headers: {

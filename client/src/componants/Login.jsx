@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 const Login = ({ onLogin }) => {
 
-
+  const url ="http://localhost:3000"
   let navigate = useNavigate();
   // stroring form data
   const [formdata, setFormdata] = useState({
@@ -61,7 +61,7 @@ const Login = ({ onLogin }) => {
       // credentials: "include", // include cookies in request
       body: JSON.stringify(formdata)
     }
-    const res = await fetch("http://localhost:3000/login", options)
+    const res = await fetch(`${url}/login`, options)
     const data = await res.json();
     // console.log(data);
 

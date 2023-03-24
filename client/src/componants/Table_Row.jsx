@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Table_Row = ({ id, username, email, message, Delete_data,tableId }) => {
+    const url ="http://localhost:3000"
     const navigate = useNavigate()
     const HandleDelete = async () => {
-        await fetch(`http://localhost:3000/api/delete/${username}`, { method: "GET" });
+        await fetch(`${url}/api/delete/${username}`, { method: "GET" });
         Delete_data(username)
 
     }

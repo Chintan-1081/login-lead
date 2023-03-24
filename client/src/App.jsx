@@ -27,6 +27,7 @@ import Edit from './componants/Edit'
 
 
 function App() {
+  const url ="http://localhost:3000"
   const [sessionId, setSessionId] = useState("")
   const [isAuthenticated, setIsAuthenticated] =
     useState(() => {
@@ -69,7 +70,7 @@ function App() {
       },
       body: JSON.stringify({})
     }
-    const res = await fetch('http://localhost:3000/logout', options)
+    const res = await fetch(`${url}/logout`, options)
     // const data = await res.json();
     // console.log(data);
     // console.log(".............................")

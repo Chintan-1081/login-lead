@@ -5,8 +5,6 @@ import Sidebar from './Sidebar_final_101'
 import Sidebar101 from './Sidebar101';
 
 const Lead = ({ onLogout }) => {
-
-  
     return (
         <>
             <div className="flex h-screen sticky top-0">

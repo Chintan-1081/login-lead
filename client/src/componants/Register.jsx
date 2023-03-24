@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 
 const Register = () => {
+    const url ="http://localhost:3000"
     // stroring form data
     const [formdata, setFormdata] = useState({
         username: "",
@@ -60,7 +61,7 @@ const Register = () => {
                 referrerPolicy: "no-referrer",
                 body: JSON.stringify(formdata)
             }
-            const res = await fetch("http://localhost:3000/register", options)
+            const res = await fetch(`${url}/register`, options)
             const data = await res.json();
             console.log(data);
             setServerStatus(data)

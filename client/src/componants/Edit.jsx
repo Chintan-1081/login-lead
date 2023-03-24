@@ -1,9 +1,9 @@
 import React from 'react'
-import { useEffect } from 'react';
 import { useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 const Edit = () => {
+  const url ="http://localhost:3000"
   // const { id } = useParams();
   const location = useLocation();
   const navigate = useNavigate()
@@ -27,7 +27,7 @@ const Edit = () => {
 
   const HandleUpdate = async (e) => {
     e.preventDefault()
-    const res = await fetch("http://localhost:3000/api/update", {
+    const res = await fetch(`${url}/api/update`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -57,7 +57,7 @@ const Edit = () => {
                   name="username"
                   value={username}
                   className="w-full block px-16 py-2 mt-2 border-gray-300
-                                   rounded-md shadow-sm focus:border-red-500  focus:outline-none
+                                   rounded-md shadow-sm focus:border-red-500 focus:outline-none
                                  focus:ring-red-200 focus:ring-opacity-50"
                   placeholder="Username"
                   required
@@ -70,8 +70,8 @@ const Edit = () => {
                 <input onChange={HandleChange} value={updateData.email}
                   name="email"
                   type="email"
-                  className=" block  w-full  mt-2 px-16 py-2 border-gray-300
-                                    rounded-md shadow-sm focus:border-indigo-300 focus:ring
+                  className="block w-full mt-2 px-16 py-2 border-gray-300
+                                  rounded-md shadow-sm focus:border-indigo-300 focus:ring
                                 focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="Email address"
                   required
@@ -84,9 +84,9 @@ const Edit = () => {
                 <textarea onChange={HandleChange} value={updateData.message}
                   name="message"
                   placeholder='Message'
-                  className=" block w-full  mt-2 px-16 py-8  border-gray-300
+                  className="block w-full mt-2 px-16 py-8  border-gray-300
                                     rounded-md  shadow-sm focus:border-indigo-300 focus:ring
-                                  focus:ring-indigo-200 focus:ring-opacity-50 "
+                                  focus:ring-indigo-200 focus:ring-opacity-50"
                   rows="4"
                 ></textarea>
               </label>

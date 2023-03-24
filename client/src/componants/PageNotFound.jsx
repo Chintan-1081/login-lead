@@ -1,6 +1,7 @@
 import React from 'react'
 
 const HandleClick = async () => {
+  const url ="http://localhost:3000"
   const options = {
     method: "POST",
     cache: "no-cache",
@@ -11,7 +12,7 @@ const HandleClick = async () => {
     },
     body: JSON.stringify({})
   }
-  const res = await fetch('http://localhost:3000/logout', options)
+  const res = await fetch(`${url}/logout`, options)
   const data = await res.json();
   console.log(data);
   console.log(".............................")
